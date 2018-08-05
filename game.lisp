@@ -82,5 +82,3 @@
       (display-player-actions "What would you like to do" actions) 
        actions) player target))
 ;;; END PLAYER ACTION DEFS
-
-(main)
