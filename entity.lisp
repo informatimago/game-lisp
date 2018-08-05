@@ -1,22 +1,26 @@
 (defclass entity ()
     ((name
-      :initarg :name)
+      :initarg :name
+      :accessor name)
      (hp
-      :initarg :hp)
+      :initarg :hp
+      :accessor hp)
      (atk
-      :initarg :atk)))
+      :initarg :atk
+      :accessor atk)))
     
 (defun make-entity (name hp atk)
     (make-instance 'entity :name name :hp hp :atk atk))
 
 (defgeneric attack (entity target))
+(defgeneric take-damag (entity target))
 (defmethod attack ((e entity) (target entity))
-    (let ((thp (slot-value target 'hp))
-        (atk (slot-value e 'atk))))
-        (setf (slot-value target 'hp) (- thp atk))))
+    (let ((thp (hp target))
+        (atk (atk e)))
+        (setf (hp target) (- thp atk))))
 
-(defvar enemy  (make-entity "bad guy" 10 10))
+(defvar enemy  (make-entity "bad guy" 10 20))
 (defvar player (make-entity "player"  10 10))
 
 (attack player enemy)
-(print (slot-value enemy 'hp))
+(print (hp enemy))
