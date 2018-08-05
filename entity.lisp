@@ -8,7 +8,7 @@
      (atk
       :initarg :atk
       :accessor atk)))
-    
+
 (defun make-entity (name hp atk)
     (make-instance 'entity :name name :hp hp :atk atk))
 
@@ -19,8 +19,12 @@
         (atk (atk e)))
         (setf (hp target) (- thp atk))))
 
-(defvar enemy  (make-entity "bad guy" 10 20))
-(defvar player (make-entity "player"  10 10))
+(defvar *enemy*)
+(defvar *player*)
 
-(attack player enemy)
-(print (hp enemy))
+(defun initialize ()
+  (setf *enemy*  (make-entity "bad guy" 10 20)
+        *player* (make-entity "player"  10 10)))
+
+
+
