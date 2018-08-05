@@ -10,7 +10,7 @@
     (make-instance 'entity :name name :hp hp :atk atk))
 
 (defgeneric attack (entity target))
-(defmethod attack (e entity) target)
+(defmethod attack ((e entity) target)
     (let ((thp (slot-value target 'hp))
         (atk (slot-value e 'atk))))
         (setf (slot-value target'hp) (- thp atk))))
