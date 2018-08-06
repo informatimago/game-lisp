@@ -8,7 +8,9 @@
   (map nil 'print arguments)
   (initialize)
   (attack *player* *enemy*)
-  (format t "hp of enemy = ~A~%" (hp *enemy*))
+  (attack *enemy* *player*)
+  (format t "hp of enemy  = ~A~%" (hp *enemy*))
+  (format t "hp of player = ~A~%" (hp *player*))
   0)
 
 
