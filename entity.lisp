@@ -46,14 +46,10 @@
   (take-damage target (atk p)))
 
 
+(defvar *enemy*)
+(defvar *player*)
 
-;;; test code
-(defvar enemy  (make-entity "bad guy" 20 20))
-(defvar player (make-player 10 10))
+(defun initialize ()
+  (setf *enemy*  (make-entity "bad guy" 10 20)
+        *player* (make-entity "player"  10 10)))
 
-
-;;; attack calls the correct methods based on class
-(attack player enemy)
-(attack enemy  player)
-(prnt (hp enemy))
-(prnt (hp player))
