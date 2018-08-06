@@ -21,7 +21,6 @@
 
 
 ;;;constructors
->>>>>>> b047d7cd0c0afd6654244b771aa3ceafc021bd54
 (defun make-entity (name hp atk)
   (make-instance 'entity :name name :hp hp :atk atk))
 
@@ -46,11 +45,6 @@
   (prnt "What do you want to do? (take action based on player input)")
   (take-damage target (atk p)))
 
-
-
-;;; test code
-(defvar enemy  (make-entity "bad guy" 20 20))
-(defvar player (make-player 10 10))
 
 (defvar *enemy*)
 (defvar *player*)
