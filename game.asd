@@ -15,6 +15,6 @@
                ((#:albert #:docbook #:textcolor) . "black"))
   :depends-on ()
   :components ((:file "entity")
-               ;; (:file "game"  :depends-on ("entity"))
+               (:file "game"  :depends-on ("entity"))
                )
   #+asdf-unicode :encoding #+asdf-unicode :utf-8)
