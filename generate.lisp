@@ -1,6 +1,12 @@
 
 (load (merge-pathnames "quicklisp/setup.lisp" (user-homedir-pathname)))
-(push #P"./" asdf:*central-registry*)
+
+(push (make-pathname :defaults (or *load-pathname*
+                                   (error "this file must be loaded, not compiled."))
+                     :name nil :type nil :version nil)
+      asdf:*central-registry*)
+;; (push #P"./" asdf:*central-registry*)
+
 (ql:quickload :game)
 
 
